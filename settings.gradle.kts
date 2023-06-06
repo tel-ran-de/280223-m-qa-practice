@@ -5,5 +5,3 @@ pluginManagement {
     }
 
 }
-rootProject.name = "starta-lessions"
-
