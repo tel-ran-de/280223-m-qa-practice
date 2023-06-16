@@ -7,11 +7,12 @@ public class ReferencesExample {
         // Integer, Double, Flat, Short, Byte
 
 
-        Double[] numbs = new Double[]{1.0, 2.0, null};
+        double[] numbs = new double[]{1.0, 2.0};
 
-        for (Double num : numbs) {
+        for (double num : numbs) {
             System.out.println(num * 2); // num * 2 => exception
         }
+        System.out.println("End");
     }
 
     private static double sum(double a, double b) {
