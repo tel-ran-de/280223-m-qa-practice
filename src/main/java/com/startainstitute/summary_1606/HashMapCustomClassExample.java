@@ -3,12 +3,15 @@ package com.startainstitute.summary_1606;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class HashMapCustomClassExample {
 
     public static void main(String[] args) {
         Map<Car, Integer> hashMap = new HashMap<>();
+//        CarType sedan = CarType.SEDAN; // it's OK
+//        if (sedan == CarType.SEDAN) {
+//            System.out.println("YES");
+//        }
 
         Car car12 = new Car(12.0);
         Car[] cars = new Car[]{car12, new Car(20.0), car12};
@@ -21,6 +24,11 @@ public class HashMapCustomClassExample {
         }
         System.out.println(hashMap);
     }
+}
+
+enum CarType {
+    SEDAN,
+    HATCHBACK,
 }
 
 class Car {

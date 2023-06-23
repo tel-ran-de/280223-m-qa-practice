@@ -1,11 +1,19 @@
 package com.startainstitute.summary_1606;
 
+/**
+ * Grow only implementation of Map. Resize is not supported and a length of each list is fixed.
+ * <p>
+ * Collision resolution is implemented.
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class CustomHashMap<K, V> {
 
-    Value[][] memory;
+    Entry[][] memory;
 
     public CustomHashMap(int capacity) {
-        this.memory = new Value[capacity][];
+        this.memory = new Entry[capacity][];
     }
 
     public CustomHashMap() {
@@ -16,13 +24,13 @@ public class CustomHashMap<K, V> {
         int hashCode = key.hashCode();
         Object[] bucket = memory[hashCode % memory.length];
         if (bucket == null) {
-            memory[hashCode] = new Value[memory.length];
-            bucket = memory[hashCode];
+            memory[hashCode % memory.length] = new Entry[memory.length];
+            bucket = memory[hashCode % memory.length];
         }
         for (int i = 0; i < bucket.length; i++) {
             Object v = bucket[i];
             if (v == null) {
-                bucket[i] = new Value(key.hashCode(), value);
+                bucket[i] = new Entry(key, value);
                 break;
             }
             if (v.equals(value)) {
@@ -33,10 +41,16 @@ public class CustomHashMap<K, V> {
 
     public V get(K key) { // O(1)
         int hashCode = key.hashCode();
-        Value[] objects = memory[hashCode];
+        Entry[] objects = memory[hashCode % memory.length];
+        if (objects == null) {
+            return null;
+        }
         for (int i = 0; i < objects.length; i++) {
-            Value v = objects[i];
-            if (hashCode == v.keyHashcode) {
+            Entry v = objects[i];
+            if (v == null) {
+                return null;
+            }
+            if (hashCode == v.key.hashCode() && key.equals(v.key)) {
                 return (V) v.value;
             }
         }
@@ -44,12 +58,12 @@ public class CustomHashMap<K, V> {
     }
 }
 
-class Value {
-    int keyHashcode;
+class Entry {
+    Object key;
     Object value;
 
-    public Value(int keyHashcode, Object value) {
-        this.keyHashcode = keyHashcode;
+    public Entry(Object key, Object value) {
+        this.key = key;
         this.value = value;
     }
 }
