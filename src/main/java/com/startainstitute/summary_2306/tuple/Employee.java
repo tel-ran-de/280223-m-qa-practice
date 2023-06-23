@@ -1,4 +1,4 @@
-package com.startainstitute.summary_2306;
+package com.startainstitute.summary_2306.tuple;
 
 public class Employee {
 

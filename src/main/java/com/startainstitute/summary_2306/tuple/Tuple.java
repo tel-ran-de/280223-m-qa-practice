@@ -1,4 +1,4 @@
-package com.startainstitute.summary_2306;
+package com.startainstitute.summary_2306.tuple;
 
 public class Tuple<T1, T2> { // кортеж
 

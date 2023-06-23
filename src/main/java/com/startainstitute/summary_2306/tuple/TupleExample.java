@@ -1,4 +1,4 @@
-package com.startainstitute.summary_2306;
+package com.startainstitute.summary_2306.tuple;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ public class TupleExample {
     public static void main(String[] args) {
 
         Tuple<String, Integer> bestStudent = findBestStudent(List.of("Anton"), new int[]{55});
+        // Tuple<String, Integer> bestStudent2 = new Tuple<>("Smith", bestStudent.getSecond());
         System.out.println(bestStudent);
 
         Tuple<Employee, Float> bestEmployee = findBestEmployee(List.of(new Employee("Ivan")), new float[]{(float) 85.5});
