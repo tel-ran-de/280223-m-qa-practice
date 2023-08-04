@@ -22,7 +22,15 @@ public class BankCard {
     private final CardStatus cardStatus;
     private final CardDetails number;
 
-    public BankCard(Currency currency, CardStatus cardStatus, CardDetails number) {
+//    public static BankCard ofEncodedData(String encodedData) {
+//        return new BankCard();
+//    }
+//
+//    public static BankCard fromGenerator(BankCardGenerator generator) {
+//        return new BankCard();
+//    }
+
+    private BankCard(Currency currency, CardStatus cardStatus, CardDetails number) {
         this.currency = currency;
         this.cardStatus = cardStatus;
         this.number = number;
