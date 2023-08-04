@@ -19,8 +19,11 @@ public class CodingProblems {
      * Отчет должен отображать: самый продаваемый артикул и общую стоимость всех продаж по каждому артикулу.
      * Желаемый интерфейс:
      * <p>
-     * ReportGenerator {
-     * ReportResult generateReport(ZonedDateTime from, ZoneDateTime to);
+     * interface ReportGenerator {
+     *     ReportResult generateReport(ZonedDateTime from, ZoneDateTime to);
+     * }
+     * public interface SoldItemsProvider {
+     *     List<SellItem> load(ZonedDateTime from, ZonedDateTime to);
      * }
      * <p>
      * Примечание:
@@ -28,6 +31,7 @@ public class CodingProblems {
      * информацию как в вашем модуле получать сами заказы. Обойдите это ограничение.
      * б) ZonedDateTime можно создать с помощью:
      * LocalDate.parse("2023-06-01").atStartOfDay(ZoneId.of("Europe/Berlin"));
+     * c) В классе Продажа дата не нужна!
      */
     public static void main(String[] args) {
 
