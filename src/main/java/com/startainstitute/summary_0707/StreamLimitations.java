@@ -23,7 +23,7 @@ public class StreamLimitations {
 //
 //        System.out.printf("Min = %d, sum = %d", result.min, result.sum);
 
-        Integer number = new Integer(23892); // autoboxing
+        Integer number = 23892; // autoboxing
 
         final Holder numberHolder = new Holder(number);
         final Holder anotherHolder = new Holder(238923);
@@ -57,7 +57,7 @@ public class StreamLimitations {
     }
 
     public static void process(Integer num) {
-        num = new Integer(2); // num -> 0x23893
+        num = 2; // num -> 0x23893
         System.out.println("Inside = " + num);
     }
 
