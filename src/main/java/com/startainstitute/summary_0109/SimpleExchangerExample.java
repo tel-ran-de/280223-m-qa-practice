@@ -2,7 +2,10 @@ package com.startainstitute.summary_0109;
 
 public class SimpleExchangerExample {
 
-    public static void main(String[] args) {
+    private static final Object OBJECT = new Object();
+
+    public static void main(String[] args) throws InterruptedException {
+
         SimpleExchanger<String> simpleExchanger = new SimpleExchanger<>();
 
         Thread thread1 = new Thread(() -> {
